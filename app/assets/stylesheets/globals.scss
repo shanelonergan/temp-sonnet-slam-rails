@@ -1,0 +1,535 @@
+$font: 'Libre Baskerville';
+$link-color: #A0A0FF;
+$primary-text-color: white;
+$sonnet-slam-color: #AC83E6;
+$willful-pictures-color: #DD4027;
+
+
+
+
+@font-face {
+	font-family: 'Dominican';
+	src: url(font-path('DOMINICA.woff')) format('woff'),
+		url(font-path('DOMINICA.TTF')) format('truetype');
+}
+
+@font-face {
+	font-family: 'LucidaCalligraphyItalic';
+	src: url(font-path('LucidaCalligraphyItalic.ttf')) format('truetype');
+}
+
+
+@mixin no-link-decoration {
+	a, a:link, a:visited, a:hover {
+		color: $primary-text-color;
+		text-decoration: none;
+	}
+}
+
+@mixin minimal-link-decoration {
+	@include no-link-decoration;
+
+	a:hover {
+		color: $link-color;
+		text-decoration: underline;
+	}
+}
+
+@mixin signature {
+	color: gold;
+	font-size: 18pt;
+	padding: 0;
+
+	.role {
+		font-size: 16pt;
+		font-style: italic;
+	}
+}
+
+a, a:link, a:hover, a:visited {
+	color: $link-color;
+	text-decoration: none;
+}
+
+body {
+	background-color: black;
+	color: $primary-text-color;
+	font-family: $font;
+	margin: 0 0 10em 0;
+	padding: 0;
+}
+
+button {
+	font-family: $font;
+	font-size: 24pt;
+}
+
+form {
+	font-family: 'Libre Baskerville', monospace;
+	overflow: auto;
+
+	input {
+		display: inline-block;
+		float: left;
+		margin: 0.5em 0;
+	}
+
+	input[type=checkbox] {
+		display: inline-block;
+		margin-left: 1em;
+		position: relative;
+		vertical-align: middle;
+	}
+
+	input[type=submit] {
+		font-family: 'Libre Baskerville', monospace;
+		font-size: 18pt;
+		margin-top: 1em;
+	}
+
+	label {
+		clear: left;
+		display: inline-block;
+		float: left;
+		padding: 0.25em 0.5em;
+		text-align: right;
+		width: 12em;
+	}
+
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: bold;
+	margin: 0;
+}
+
+p {
+	font-size: 12pt;
+	font-weight: normal;
+	margin: 0;
+	padding: 0.5em 1em;
+	text-align: left;
+	text-decoration: none;
+}
+
+ul {
+	text-align: left;
+}
+
+.admin {
+	background-color: #404040;
+	display: inline-block;
+	padding: 1em;
+	text-align: center;
+
+	form {
+		display: block;
+	}
+
+	.submit {
+		display: inline-block;
+	}
+}
+
+.centered {
+	text-align: center;
+}
+
+.clear {
+	float: none;
+	clear: both;
+}
+
+.faq {
+	display: inline-block;
+	font-weight: normal;
+	text-align: left;
+	width: 48em;
+
+	h2 {
+		padding-bottom: 1em;
+	}
+
+	li {
+		padding-bottom: 1em;
+
+		h4 {
+			font-size: 16pt;
+			font-style: italic;
+		}
+	}
+
+	.signature {
+		@include signature;
+	}
+}
+
+.forgot-password {
+	display: inline-block;
+}
+
+.hidden {
+	height: 0;
+	visibility: hidden;
+}
+
+.home {
+	display: inline-block;
+	padding: 0;
+
+	td {
+		min-width: 5em;
+		padding: 4px 1em;
+		vertical-align: top;
+	}
+
+	.announcement {
+		font-size: 18pt;
+
+	}
+
+	.column {
+		display: inline-block;
+		float: left;
+		max-width: 510px;
+		text-align: left;
+	}
+
+	.home-info {
+		border-collapse: collapse;
+
+		.cta {
+			background-color: #303030;
+			border-color: $willful-pictures-color;
+			border-style: solid;
+			border-width: 3px;
+			cursor: pointer;
+
+			td {
+				padding: 1em;
+			}
+		}
+	}
+
+	.right-column {
+		display: inline-block;
+		height: 100%;
+		padding-left: 4em;
+		width: 400px;
+	}
+
+	.signature {
+		@include signature;
+
+		font-size: inherit;
+
+		.role {
+			font-size: inherit;
+		}
+	}
+}
+
+.menubar {
+	background: rgba(255,255,255,0.2);
+	padding: 0.5em 1em;
+
+	a, a:visited {
+		color: white;
+		padding: 0 1em;
+	}
+}
+
+.message-popup {
+	display: none;
+
+	.message {
+		padding: 1em 0;
+	}
+}
+
+.minimal-link-decoration {
+	@include minimal-link-decoration;
+}
+
+.padding {
+   padding: 1em 0 0 0;
+}
+
+.registration-info {
+	display: inline-block;
+	text-align: left;
+
+	li {
+		max-width: 40em;
+		padding-bottom: 1em;
+	}
+
+	.become-sonneteer-button {
+		display: block;
+		text-align: center;
+	}
+}
+
+.registration-form {
+	display: inline-block;
+}
+
+.release-form {
+	display: inline-block;
+	padding-left: 1em;
+	text-align: left;
+
+	.action {
+		padding-top: 1em;
+		text-align: center;
+
+		form {
+			display: inline-block;
+		}
+	}
+
+	.release-text {
+		padding: 2em;
+	}
+}
+
+.resend-confirmation {
+	display: inline-block;
+
+	form {
+		padding: 1em;
+	}
+
+	label {
+		width: auto;
+	}
+}
+
+.returning {
+	display: inline-block;
+	padding: 1em 2em;
+	text-align: left;
+}
+
+.right-justified {
+	text-align: right;
+}
+
+.shadowed {
+	-webkit-filter: drop-shadow(12px 12px 25px rgba(0,0,0,0.5));
+	filter: url(#drop-shadow);
+	-ms-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=12, OffY=12, Color='#444')";
+	filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=12, OffY=12, Color='#444')";
+}
+
+.sign-in {
+	display: inline-block;
+}
+
+.site-content{
+	display: inline-block;
+	max-width: 80em;
+	padding: 2em 4em;
+}
+
+.site-content-centering-wrapper {
+	display: block;
+	text-align: center;
+}
+
+.site-footer {
+	@include no-link-decoration;
+
+	display: block;
+	padding: 2em 0 0 0;
+	text-align: center;
+
+	.dca-block {
+
+		.dca-logo {
+			background-color: white;
+			display: inline-block;
+			padding: 5px 2em;
+		}
+
+		.dca-text {
+			display: inline-block;
+			font-size: 9pt;
+			font-style: italic;
+			font-weight: lighter;
+			padding: 1em 0;
+			width: 500px;
+		}
+	}
+
+	.willful-pictures {
+		display: inline-block;
+		font-family: "LucidaCalligraphyItalic";
+		padding: 1em;
+		width: 12em;
+
+		a:link, a:visited, a:hover {
+			color: $willful-pictures-color;
+			display: inline-block;
+			text-align: center;
+		}
+	}
+}
+
+.site-header {
+	@include no-link-decoration;
+
+	font-size: large;
+	padding: 1em 0 1em 2em;
+
+
+	.right-side {
+		float: right;
+		padding: 0 2em 0 0;
+
+		.login {
+			a:link {
+				text-decoration: underline;
+			}
+		}
+		.external-site-bar {
+			float: right;
+			padding-top: 1em;
+			vertical-align: bottom;
+
+			img {
+				height: 24px;
+			}
+		}
+	}
+
+	.subtitle {
+		font-weight: normal;
+
+		font-style: italic;
+
+		.produced-by {
+			color: lightgray;
+			font-size: 10pt;
+			padding-top: 4px;
+		}
+
+		.tag-line {
+			font-size: 14pt;
+		}
+	}
+
+	.title {
+		color: $sonnet-slam-color;
+		font-family: 'Dominican';
+		font-size: 28pt;
+		letter-spacing: 1px;
+	}
+
+}
+
+.site-notifications {
+	.alert {
+		background: rgba(255, 128, 128, 0.2);
+		padding: 1em;
+	}
+
+	.notice {
+		background: rgba(128, 255, 128, 0.2);
+		padding: 1em;
+	}
+}
+
+.sonnet {
+	display: inline-block;
+	font-weight: normal;
+	padding: 2em;
+	text-align: left;
+}
+
+.submit {
+	display: inline-block;
+}
+
+.underline {
+	text-decoration: underline;
+}
+
+.user {
+	padding-top: 1em;
+
+	.donate {
+		@include no-link-decoration;
+
+		background-color: #202020;
+		border: 3px solid gray;
+		border-radius: 10px;
+		display: inline-block;
+		padding: 1em 0;
+		width: 40em;
+
+		a, a:visited {
+			color: #AD84E6;
+		}
+	}
+
+	.notifications {
+		ul {
+			padding: 1em 0;
+
+			li {
+				padding-bottom: 1em;
+			}
+
+		}
+	}
+
+	.working-on-it {
+		font-size: 18pt;
+		padding: 2em 0;
+	}
+}
+
+.users {
+	font-family: Vollkorn, Cambria, serif;
+	max-width: 128em !important;
+	text-align: left;
+
+	.users-table {
+		label {
+			color: lightgray;
+		}
+
+		table {
+			padding: 0.5em 0;
+
+			th {
+				background-color: #4b3a66;
+				border-width: 0;
+			}
+
+			tr:hover {
+				background-color: #404040;
+			}
+
+		}
+
+		#users-table_info, #users-table_paginate {
+			color: lightgray;
+		}
+
+		.sonnet-number-text-field {
+			padding: 0 4px;
+			text-align: right;
+			width: 26px;
+		}
+
+		.stripe-even {
+			background-color: #2D2D2D;
+		}
+
+		.stripe-odd {
+			background-color: #242424;
+		}
+	}
+}

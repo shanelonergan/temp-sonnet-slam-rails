@@ -1,0 +1,65 @@
+!!!
+%html
+	%head
+		%title
+			Sonnet Slam
+			= @page_name ? ' | ' + @page_name : ''
+		= csrf_meta_tags
+		= stylesheet_link_tag    'application', media: 'all'
+		= javascript_include_tag 'application'
+		%link{rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Libre+Baskerville'}
+
+	%body
+		.site-header
+			.right-side
+				-# .login
+				-# 	- if current_user
+				-# 		= link_to(current_user.email.downcase, user_path(current_user))
+				-# 		\~
+				-# 		= link_to('sign out', destroy_user_session_path, method: :delete)
+				-# 	- else
+				-# 		= link_to('register <i>(new user)</i>'.html_safe, :users_registration_info, class: 'underline')
+				-# 		&nbsp; &nbsp;
+				-# 		= link_to('sign in <i>(returning user)</i>'.html_safe, :new_user_session, class: 'underline')
+				.external-site-bar
+					%a{href: 'https://vimeo.com/showcase/10345474', target:'_blank'}
+						%img{src: image_path('vimeo.png')}
+					-# %a{href: 'https://twitter.com/sonnetslam', target:'_blank'}
+					-# 	%img{src: image_path('twitter.png')}
+					%a{href: 'https://www.facebook.com/SonnetSlam/?ref=bookmarks', target:'_blank'}
+						%img{src: image_path('facebook.png')}
+					%a{href: 'https://www.instagram.com/shakespearesonnetslam/', target:'_blank'}
+						%img{src: image_path('instagram.png')}
+					%a{href: 'https://www.youtube.com/playlist?list=PLS9ciIJDBfQ9RTo9Qz_sdYp6SEXSPlypb', target:'_blank'}
+						%img{src: image_path('youtube.png')}
+
+			%a{href: '/'}
+				.title
+					Annual Shakespeare's Birthday Sonnet Slam
+				.subtitle
+					.tag-line
+						Where 154 sonnets are spoken aloud by 154 readers of all ages and abilities
+					.produced-by produced by Willful Pictures
+
+		.menubar
+			-# = link_to 'Rules', users_registration_info_path(@user)
+			-# = link_to 'FAQ', faq_path
+			-# - if current_user && current_user.admin
+				=link_to 'Users', :users
+
+		-# .site-notifications
+		-# 	- if notice.present?
+		-# 		.notice= notice.html_safe
+		-# 	- if alert.present?
+		-# 		.alert= alert.html_safe
+
+		.site-content-centering-wrapper
+			.clear
+			.site-content
+				= yield
+
+		.site-footer
+			.willful-pictures
+				%a{href: 'https://www.willfulpictures.com/', target: '_blank'}
+					%div Willful Pictures
+					%div= current_year
