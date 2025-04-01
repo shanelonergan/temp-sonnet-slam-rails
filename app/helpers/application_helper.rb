@@ -1,6 +1,6 @@
 module ApplicationHelper
   def current_year
-    # Time.now.year
-    '2024'
+    Time.zone.now.year
+    # '2025'
   end
 end
